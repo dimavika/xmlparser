@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medicines xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+         xs:noNamespaceSchemaLocation="schema.xsd">
+    <medicine>
+        <name>med1</name>
+        <firm>firm1</firm>
+        <group>antibiotic</group>
+        <version>tablets</version>
+        <pack>bank</pack>
+        <dosage>23</dosage>
+    </medicine>
+    <medicine>
+        <name>med2</name>
+        <firm>firm2</firm>
+        <group>vitamin</group>
+        <version>powder</version>
+        <pack>box</pack>
+        <dosage>30</dosage>
+    </medicine>
+    <recipe-medicine>
+        <name>rec-med1</name>
+        <firm>pharm2</firm>
+        <group>pain_medication</group>
+        <version>capsules</version>
+        <pack>box</pack>
+        <dosage>25</dosage>
+        <doctor-name>namee</doctor-name>
+        <medical-org>medorg</medical-org>
+        <days-duration>10</days-duration>
+    </recipe-medicine>
+</medicines>

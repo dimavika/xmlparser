@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema elementFormDefault="qualified"
+           attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="medicines">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="medicine"
+                            type="medicine"
+                            maxOccurs="unbounded"/>
+                <xs:element name="recipe-medicine"
+                            type="recipe-medicine"
+                            maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+        <xs:complexType name="medicine">
+            <xs:sequence>
+                <xs:element type="xs:string" name="name"/>
+                <xs:element type="xs:string" name="firm"/>
+                <xs:element type="group" name="group"/>
+                <xs:element type="version" name="version"/>
+                <xs:element type="package" name="pack"/>
+                <xs:element type="xs:byte" name="dosage"/>
+            </xs:sequence>
+        </xs:complexType>
+
+    <xs:complexType name="recipe-medicine">
+        <xs:sequence>
+            <xs:element type="xs:string" name="name"/>
+            <xs:element type="xs:string" name="firm"/>
+            <xs:element type="group" name="group"/>
+            <xs:element type="version" name="version"/>
+            <xs:element type="package" name="pack"/>
+            <xs:element type="xs:byte" name="dosage"/>
+            <xs:element type="xs:string" name="doctor-name"/>
+            <xs:element type="xs:string" name="medical-org"/>
+            <xs:element type="xs:byte" name="days-duration"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="group">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="antibiotic"/>
+            <xs:enumeration value="pain_medication"/>
+            <xs:enumeration value="vitamin"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="version">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="tablets"/>
+            <xs:enumeration value="capsules"/>
+            <xs:enumeration value="powder"/>
+            <xs:enumeration value="drops"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="package">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="box"/>
+            <xs:enumeration value="bank"/>
+            <xs:enumeration value="test_tube"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
