@@ -1,11 +1,11 @@
-package entity;
+package com.epam.entity;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import com.epam.entity.enums.Group;
+import com.epam.entity.enums.Pack;
+import com.epam.entity.enums.Version;
+import javax.xml.bind.annotation.*;
 
-@XmlType(name = "recipe-medicine")
+@XmlRootElement(name = "recipe-medicine")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class RecipeMedicine extends Medicine{
 
@@ -15,6 +15,17 @@ public class RecipeMedicine extends Medicine{
     private String medicalOrganization;
     @XmlElement(name = "days-duration")
     private int daysDuration;
+
+    public RecipeMedicine() {
+    }
+
+    public RecipeMedicine(String name, String firm, Group group, Version version, Pack pack, int dosage,
+                          String doctorName, String medicalOrganization, int daysDuration) {
+        super(name, firm, group, version, pack, dosage);
+        this.doctorName = doctorName;
+        this.medicalOrganization = medicalOrganization;
+        this.daysDuration = daysDuration;
+    }
 
     public String getDoctorName() {
         return doctorName;
@@ -71,6 +82,6 @@ public class RecipeMedicine extends Medicine{
                 "doctorName='" + doctorName + '\'' +
                 ", medicalOrganization='" + medicalOrganization + '\'' +
                 ", daysDuration=" + daysDuration +
-                '}';
+                "} " + super.toString();
     }
 }

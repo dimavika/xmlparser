@@ -1,4 +1,4 @@
-package parser;
+package com.epam.parser;
 
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
@@ -7,7 +7,7 @@ import java.io.File;
 
 public class XmlValidator {
 
-    public boolean validateXMLByXSD(File xml, File xsd) {
+    public boolean validateXmlByXsd(File xml, File xsd) {
         try {
             SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI)
                     .newSchema(xsd)

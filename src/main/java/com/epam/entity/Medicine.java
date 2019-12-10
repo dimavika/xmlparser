@@ -1,12 +1,11 @@
-package entity;
+package com.epam.entity;
 
-import entity.enums.Group;
-import entity.enums.Pack;
-import entity.enums.Version;
-
+import com.epam.entity.enums.Group;
+import com.epam.entity.enums.Pack;
+import com.epam.entity.enums.Version;
 import javax.xml.bind.annotation.*;
 
-@XmlType(name = "medicine")
+@XmlRootElement(name = "medicine")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlSeeAlso(RecipeMedicine.class)
 public class Medicine {
@@ -23,6 +22,18 @@ public class Medicine {
     private Pack pack;
     @XmlElement(name = "dosage")
     private int dosage;
+
+    public Medicine(String name, String firm, Group group, Version version, Pack pack, int dosage) {
+        this.name = name;
+        this.firm = firm;
+        this.group = group;
+        this.version = version;
+        this.pack = pack;
+        this.dosage = dosage;
+    }
+
+    public Medicine() {
+    }
 
     public String getName() {
         return name;

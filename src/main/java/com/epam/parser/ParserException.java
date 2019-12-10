@@ -1,4 +1,4 @@
-package parser;
+package com.epam.parser;
 
 public class ParserException extends Exception {
 

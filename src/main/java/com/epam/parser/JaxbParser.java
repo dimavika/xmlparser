@@ -1,7 +1,7 @@
-package parser;
+package com.epam.parser;
 
-import entity.Medicine;
-import entity.Medicines;
+import com.epam.entity.Medicine;
+import com.epam.entity.Medicines;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -9,10 +9,10 @@ import javax.xml.bind.Unmarshaller;
 import java.io.File;
 import java.util.List;
 
-public class JAXBParser implements XmlParser<Medicine> {
+public class JaxbParser implements XmlParser {
 
     @Override
-    public List<Medicine> getData(String path) throws ParserException {
+    public List<Medicine> parse(String path) throws ParserException {
         File file = new File(path);
         try {
             JAXBContext context = JAXBContext.newInstance(Medicines.class);

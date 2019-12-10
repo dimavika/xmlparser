@@ -13,7 +13,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    
+
         <xs:complexType name="medicine">
             <xs:sequence>
                 <xs:element type="xs:string" name="name"/>

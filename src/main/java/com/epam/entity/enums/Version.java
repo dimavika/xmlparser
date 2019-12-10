@@ -1,4 +1,4 @@
-package entity.enums;
+package com.epam.entity.enums;
 
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
